@@ -13,7 +13,7 @@ const PostPage = () => {
   const posts = useSelector((state) => state.posts);
   const post = posts.find((p) => p._id === postId); // ✅ Get post from Redux
   const isNonMobileScreens = useMediaQuery("(min-width:1000px)");
-  const { _id } = useSelector((state) => state.user);
+  const { _id } = useSelector((state) => state.user) || {};
   const dispatch = useDispatch();
 
   // Fetch the post if not in Redux
